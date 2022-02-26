@@ -6,6 +6,7 @@
    outputs sets of 4 hex digits separated by ':' with zero or 1 "::"
 
 $ID: $
+$Id$
 
 */
 
