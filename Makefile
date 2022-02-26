@@ -165,7 +165,7 @@ dist: 	rfc14811.0.0.deb
 
 $(DEB)/DEBIAN/control: dev/control
 	@$(CHK_DIR_EXISTS) $(DEB)/DEBIAN || $(MKDIR) $(DEB)/DEBIAN 
-	$(COPY_FILE) dev/control $(DEB)/DEBIAN/control
+	sed "s/42/`git rev-parse --short HEAD`/" dev/control  > $(DEB)/DEBIAN/control
 	chmod -R g-s $(DEB)/DEBIAN/control
 
 rfc14811.0.0.deb: $(DEB)/DEBIAN/control
@@ -212,7 +212,6 @@ compiler_lex_clean:
 compiler_clean: 
 
 ####### Compile
-
 rfc1481.o: src/rfc1481.c 
 	$(CC) -c $(CFLAGS) $(INCPATH) -o rfc1481.o src/rfc1481.c
 
