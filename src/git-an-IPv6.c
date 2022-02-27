@@ -1,6 +1,8 @@
 /* Aubrey McIntosh, PhD
+   git@github.com:a-mcintosh/git-an-IPv6.git
+
    calculate unrouted IPv6 address from git commit ID
-   e.g. rfc4193 `git rev-parse --short HEAD`
+   e.g. git-an-IPv6 `git rev-parse --short HEAD`
    ----
    inputs: a sequence of hex digits and ":"
    outputs sets of 4 hex digits separated by ':' with zero or 1 "::"

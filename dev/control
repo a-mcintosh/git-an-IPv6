@@ -1,8 +1,8 @@
-Source: rfc4193
+Source: git-an-IPv6
 Section: devel
 Maintainer: Aubrey McIntosh, PhD <aubrey.mcintosh@utexas.edu>
-Homepage: https://github.com/a-mcintosh/rfc4193.git
-Package: rfc4193
+Homepage: git@github.com:a-mcintosh/git-an-IPv6.git
+Package: git-an-IPv6
 Version: 1.0.1-42
 Priority: optional
 Installed-Size: 14
