@@ -159,7 +159,7 @@ Makefile: explore-qmake.git.pro  /usr/share/qt4/mkspecs/linux-g++-64/qmake.conf 
 qmake:  FORCE
 	@$(QMAKE) -o Makefile explore-qmake.git.pro
 
-dist: 	rfc4193-1.0.0.deb $(TARGET) $(DEB)/usr/local/man/rfc1421.md
+dist: 	rfc4193-1.0.0.deb $(TARGET) $(DEB)/usr/local/man/rfc4193.md
 	@$(CHK_DIR_EXISTS) $(DEB)/usr/lib/src || $(MKDIR) $(DEB)/usr/lib/src 
 	$(COPY_FILE) --parents $(SOURCES) $(DIST) $(DEB)/usr/lib/ && $(COPY_FILE) --parents $(SOURCES) $(DEB)/usr/local/
 
@@ -168,11 +168,11 @@ $(DEB)/DEBIAN/control: dev/control
 	sed "s/42/`git rev-parse --short HEAD`/" dev/control  > $(DEB)/DEBIAN/control
 	chmod -R g-s $(DEB)/DEBIAN/control
 
-$(DEB)/usr/local/man/rfc1421.md: README.md
+$(DEB)/usr/local/man/rfc4193.md: README.md
 	@$(CHK_DIR_EXISTS) $(DEB)/usr/local/man || $(MKDIR) $(DEB)/usr/local/man 
-	$(COPY_FILE) -r README.md $(DEB)/usr/local/man/rfc1421.md
+	$(COPY_FILE) -r README.md $(DEB)/usr/local/man/rfc4193.md
 
-rfc4193-1.0.0.deb: $(DEB)/DEBIAN/control $(TARGET) $(DEB)/usr/local/man/rfc1421.md
+rfc4193-1.0.0.deb: $(DEB)/DEBIAN/control $(TARGET) $(DEB)/usr/local/man/rfc4193.md
 	chmod g-s $(DEB)/DEBIAN
 	dpkg -b $(DEB)
 	mv $(DEB).deb rfc4193-1.0.0.deb

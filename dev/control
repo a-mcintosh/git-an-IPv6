@@ -1,0 +1,15 @@
+Source: rfc4193
+Section: devel
+Maintainer: Aubrey McIntosh, PhD <aubrey.mcintosh@utexas.edu>
+Homepage: https://github.com/a-mcintosh/rfc4193.git
+Package: rfc4193
+Version: 1.0.1-42
+Priority: optional
+Installed-Size: 14
+Architecture: i386
+Depends: 
+Recommends: git, qt4-dev
+Description: Jig to produce IPv6 address from git committ ID
+ Parses a set of hexdigit | ":" into a globally unique IPv6 ID
+ .
+ Multiple parameters may be supplied
