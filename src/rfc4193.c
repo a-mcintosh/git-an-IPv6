@@ -1,12 +1,11 @@
 /* Aubrey McIntosh, PhD
    calculate unrouted IPv6 address from git commit ID
-   e.g. rfc1481 `git rev-parse --short HEAD`
+   e.g. rfc4193 `git rev-parse --short HEAD`
    ----
    inputs: a sequence of hex digits and ":"
    outputs sets of 4 hex digits separated by ':' with zero or 1 "::"
 
-$ID: $
-$Id$
+$Id: d99cf0aeb3eec5aed19235d51d2a7ecdecee7f32 $
 
 */
 
@@ -129,7 +128,7 @@ int main(int argc, char *argv[]) {
       case DOCU:
         laststate = PREFIX;
         state = NEXTARG;
-       break;
+        break;
       case NEXTARG:
         arg++;
         i = 0;
@@ -151,6 +150,8 @@ int main(int argc, char *argv[]) {
         break;
       case EOI: 
         if (haddouble == 1) {j=29;}
+	if (j==0)  {putchar('f'); j++;}
+	if (j==1)  {putchar('d'); j++;}
         state = handleEoiState(&j);
         break;
       case DOCU2:
@@ -158,6 +159,7 @@ int main(int argc, char *argv[]) {
 	break;
     }
   }
+fprintf( stderr, "\n");
 return 0;
 }
 
