@@ -26,6 +26,7 @@ int newline;
 char goodch(char *k, int *i) {
   char ch;
   int good;
+
   k[*i] = tolower(k[*i]);
   ch = k[*i];
   if (ch=='n') {newline = 1;}
@@ -33,6 +34,7 @@ char goodch(char *k, int *i) {
     | (ch==0x0) | (ch==':');
   while (good == 0) {
     ch = k[++*i];
+    if (ch=='n') {newline = 1;}
     good = (('a' <= ch) && (ch <= 'f')) | (('0' <= ch) && (ch <= '9')) \
       | (ch==0x0) | (ch==':');
   }
@@ -58,15 +60,22 @@ int quantum (int blocks) {
 
 enum Statetype handleNormalState(char *k, enum Statetype *laststate, int *i, int *j) {
     enum Statetype state;
+    char ch;
+
     state = NORMAL;
-    if (goodch(k,i) == ':') {*j=quantum(*j); state = AFTER;}
-    else {
-      if ((*j % 4)==0) {putchar(':');}
-      putchar(k[*i]);
-      ++*j;
+    ch = goodch(k,i);
+
+    if (ch != 0) {
+      if (ch == ':') {*j=quantum(*j); state = AFTER;}
+      else {
+        if ((*j % 4)==0) {putchar(':');}
+        putchar(ch);
+        ++*j;
+      }
+      ++*i;
+      ch = goodch(k,i);
     }
-    ++*i;
-    if (goodch(k,i)==0) {*laststate = state; state = NEXTARG;}
+    if (ch==0) {*laststate = state; state = NEXTARG;}
     if (*j >= 32) {state = DOCU2;}
     return state;
 }
@@ -164,6 +173,7 @@ int main(int argc, char *argv[]) {
 	break;
     }
   }
+putchar(0x0);
 if (newline==1) {printf("\nDone.\n");}
 return 0;
 }
