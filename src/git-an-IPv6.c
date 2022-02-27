@@ -21,12 +21,14 @@ https://www.cs.princeton.edu/courses/archive/fall07/cos217/lectures/02CharacterI
 
 
 enum Statetype {DOCU,NEXTARG,PREFIX,NORMAL,AFTER,DOUBLE,EOI,DOCU2,DONE};
+int newline;
 
 char goodch(char *k, int *i) {
   char ch;
   int good;
   k[*i] = tolower(k[*i]);
   ch = k[*i];
+  if (ch=='n') {newline = 1;}
   good = (('a' <= ch) && (ch <= 'f')) | (('0' <= ch) && (ch <= '9')) \
     | (ch==0x0) | (ch==':');
   while (good == 0) {
@@ -124,7 +126,8 @@ int main(int argc, char *argv[]) {
   enum Statetype laststate;
   char *k;
   int haddouble=0;
-  
+  newline = 0;
+
   while (state != DONE) {
     switch (state) {
       case DOCU:
@@ -161,7 +164,7 @@ int main(int argc, char *argv[]) {
 	break;
     }
   }
-fprintf( stderr, "\n");
+if (newline==1) {printf("\nDone.\n");}
 return 0;
 }
 

@@ -227,9 +227,17 @@ uninstall:   FORCE
 
 FORCE:
 
-test: $(TARGET)
-	echo $(TARGET)
-	-echo $(TARGET) :867:5309
-	-echo $(TARGET) `git rev-parse HEAD`
+##actually, there are subtle problems
+test: Makefile $(TARGET)
+	 $(TARGET) n
+	-$(TARGET) 867:5309
+	-$(TARGET) n867:5309
+	-$(TARGET) n:867:5309
+	-$(TARGET) :867:n5309
+	-$(TARGET) `git rev-parse --short=10 HEAD` n
+	-$(TARGET) `git rev-parse --short=10 HEAD` n
+	-$(TARGET) `git rev-parse --short=10 HEAD` :n
+	-$(TARGET) `git rev-parse --short=14 HEAD` :n
+	-$(TARGET) n `git rev-parse HEAD`
 
 
