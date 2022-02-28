@@ -4,9 +4,9 @@ Copyright (c) 2022 Aubrey McIntosh, PhD
 
 
 ###8MC2kMMxmjWCEPC81yjYy2bhCQeeU5RTa8
-[title](https://agea.github.io/tutorial.md "Markdown Tutorial")
-[title](https://github.com/a-mcintosh/git-an-IPv6.git "github repository")
-[title](https://datatracker.ietf.org/doc/html/rfc4193 "Unique Local IPv6 Unicast Addresses")
+*[Markdown Tutorial](https://agea.github.io/tutorial.md "Markdown Tutorial")
+*[github repository](https://github.com/a-mcintosh/git-an-IPv6.git "github repository")
+*[Unique Local IPv6 Unicast Addresses](https://datatracker.ietf.org/doc/html/rfc4193 *"Unique Local IPv6 Unicast Addresses")
 
 What does it do
 ----------------
