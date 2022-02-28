@@ -3,7 +3,7 @@ git-an-IPv6
 Copyright (c) 2022 Aubrey McIntosh, PhD
 
 
-###8MC2kMMxmjWCEPC81yjYy2bhCQeeU5RTa8
+### 8MC2kMMxmjWCEPC81yjYy2bhCQeeU5RTa8
 * [Markdown Tutorial](https://agea.github.io/tutorial.md "Markdown Tutorial")
 * [github repository](https://github.com/a-mcintosh/git-an-IPv6.git "github repository")
 * [Unique Local IPv6 Unicast Addresses](https://datatracker.ietf.org/doc/html/rfc4193 "Unique Local IPv6 Unicast Addresses")
@@ -37,7 +37,7 @@ Testing
 The output does not normally produce an end of line.  By including the character 'n' anywhere in the input stream, the end-of-line character is produced, but the 'n' is dropped from the output.
 
 The envisioned use is in sed commands, e.g. 
- sed "s/42/`git rev-parse --short HEAD`/" dev/control  > $(DEB)/DEBIAN/control
+ sed "s/42/`git rev-parse --short HEAD` :867:5309/" dev/control  > $(DEB)/DEBIAN/control
 
 
 
