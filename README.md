@@ -3,8 +3,11 @@ git-an-IPv6
 Copyright (c) 2022 Aubrey McIntosh, PhD
 
 
-##https://github.com/a-mcintosh/git-an-IPv6.git
-##https://datatracker.ietf.org/doc/html/rfc4193
+###8MC2kMMxmjWCEPC81yjYy2bhCQeeU5RTa8
+[title](https://agea.github.io/tutorial.md "Markdown Tutorial")
+[title](https://github.com/a-mcintosh/git-an-IPv6.git "github repository")
+[title](https://datatracker.ietf.org/doc/html/rfc4193 "Unique Local IPv6 Unicast Addresses")
+
 What does it do
 ----------------
 
@@ -35,11 +38,6 @@ The output does not normally produce an end of line.  By including the character
 
 The envisioned use is in sed commands, e.g. 
  sed "s/42/`git rev-parse --short HEAD`/" dev/control  > $(DEB)/DEBIAN/control
-
-###8MC2kMMxmjWCEPC81yjYy2bhCQeeU5RTa8
-[title](https://agea.github.io/tutorial.md "Markdown Tutorial")
-[title](https://github.com/a-mcintosh/git-an-IPv6.git "github repository")
-[title](https://datatracker.ietf.org/doc/html/rfc4193 "Unique Local IPv6 Unicast Addresses")
 
 
 
