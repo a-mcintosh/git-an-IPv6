@@ -13,6 +13,7 @@ qmake -set TARGET git-an-IPv6
 qmake -set DESTPATH dev/deb/template/usr/local
 qmake -set DESTDIR  dev/deb/template/usr/local/bin/
 qmake -set EPOCH    -`git rev-parse --short HEAD`  
+qmake -set debID    _001-004_all  
 qmake -query
 
 #  r1.target    =

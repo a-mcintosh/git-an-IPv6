@@ -46,7 +46,7 @@ r7.depends  =	deb.filesystem \
 		$$[DESTPATH]/man/$(QMAKE_TARGET).md \
 		$$[DESTPATH]/$(SOURCES)
 r7.commands = \
-		dpkg -b dev/deb/template $(QMAKE_TARGET).deb
+		dpkg -b dev/deb/template $(QMAKE_TARGET)$$[debID].deb
 
 r8.target   = 	$$[DESTPATH]/$(SOURCES)
 r8.depends  = 	$(SOURCES)
@@ -64,7 +64,7 @@ deb.clean.commands = $(DEL_FILE) \
 	$$[DESTPATH]/man/* \
 	$$[DESTPATH]/obj/* \
 	$$[DESTPATH]/src/* \
-	dev/$(QMAKE_TARGET).deb
+	dev/$(QMAKE_TARGET)$$[debID].deb
 
 QMAKE_EXTRA_TARGETS += deb.clean
 ######################################################################
@@ -80,7 +80,7 @@ deb.man.commands = $(COPY_FILE) -r README.md $$[DESTPATH]/man/$(QMAKE_TARGET).md
 
 QMAKE_EXTRA_TARGETS += deb.man
 ######################################################################
-deb.deb.target   = dev/$(QMAKE_TARGET)$(VER).deb
+deb.deb.target   = dev/$(QMAKE_TARGET)$(VER)$$[debID].deb
 deb.deb.depends  = dev/deb/DEBIAN/control $(TARGET) \
   $(DESTDIR)../man/$(QMAKE_TARGET)$(VER).md
 deb.deb.commands = touch dev/$(QMAKE_TARGET)$(VER).deb

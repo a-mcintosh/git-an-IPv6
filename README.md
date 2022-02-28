@@ -38,6 +38,8 @@ The envisioned use is in sed commands, e.g.
 * [Markdown Tutorial](https://agea.github.io/tutorial.md "Markdown Tutorial")
 * [github repository](https://github.com/a-mcintosh/git-an-IPv6.git "github repository")
 * [Unique Local IPv6 Unicast Addresses](https://datatracker.ietf.org/doc/html/rfc4193 "Unique Local IPv6 Unicast Addresses")
+* [To-Do: study a mature lateral project](http://manpages.ubuntu.com/manpages/jammy/en/man1/git-buildpackage.1.html "Maintain Debian packages in Git")
+ 
 
 
 
