@@ -64,7 +64,8 @@ deb.clean.commands = $(DEL_FILE) \
 	$$[DESTPATH]/man/* \
 	$$[DESTPATH]/obj/* \
 	$$[DESTPATH]/src/* \
-	dev/$(QMAKE_TARGET)$$[debID].deb
+	dev/$(QMAKE_TARGET)$$[debID].deb \
+	setup
 
 QMAKE_EXTRA_TARGETS += deb.clean
 ######################################################################
@@ -85,6 +86,19 @@ deb.deb.depends  = dev/deb/DEBIAN/control $(TARGET) \
   $(DESTDIR)../man/$(QMAKE_TARGET)$(VER).md
 deb.deb.commands = touch dev/$(QMAKE_TARGET)$(VER).deb
 QMAKE_EXTRA_TARGETS += deb.deb
+######################################################################
+r10.target   = qmake-setup
+r10.depends  = git-an-IPv6.pro
+r10.commands = qmake -set TARGET git-an-IPv6; \
+  qmake -set DESTPATH dev/deb/template/usr/local;  \
+  qmake -set DESTDIR  dev/deb/template/usr/local/bin/;  \
+  qmake -set EPOCH    -`git rev-parse --short HEAD`  ;  \
+  qmake -set debID    _001-004_all  ;\
+  touch qmake-setup
+
+r11.target   = first
+r11.depends  = deb qmake-setup
+QMAKE_EXTRA_TARGETS += r10 r11
 ######################################################################
 
 
