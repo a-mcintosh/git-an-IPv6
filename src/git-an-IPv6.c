@@ -131,12 +131,12 @@ int main(int argc, char *argv[]) {
   int arg=0;
   enum Statetype state = DOCU;
   int i,j;
-  char lastch;
   enum Statetype laststate;
-  char *k;
   int haddouble=0;
   newline = 0;
-
+/* ----meaningless assignments to quiet the compiler------ */
+  char *k=0;
+/* ------------------------------------------------------- */
   while (state != DONE) {
     switch (state) {
       case DOCU:
@@ -170,6 +170,8 @@ int main(int argc, char *argv[]) {
         break;
       case DOCU2:
         state = DONE;
+	break;
+      case DONE:
 	break;
     }
   }
